@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costos - Leon Livings</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1 class="calculadora-title">Calculadora de Precios</h1>
+    <form id="calculadora-form" method="dialog">
+        <label for="metrosAluminio75x25">Metros de Aluminio Anodizado 75x25 deseados:</label>
+        <input type="number" id="metrosAluminio75x25" name="metrosAluminio75x25" required><br>
+
+        <label for="metrosAluminio50x25">Metros de Aluminio Anodizado 50x25 deseados:</label>
+        <input type="number" id="metrosAluminio50x25" name="metrosAluminio50x25" required><br>
+
+        <label for="combosAlmohadones">Combos de almohadones deseados:</label>
+        <input type="number" id="combosAlmohadones" name="combosAlmohadones" required><br>
+
+        <label for="metrosWPC">Metros de WPC deseados:</label>
+        <input type="number" id="metrosWPC" name="metrosWPC" required><br>
+
+        <input type="submit" value="Calcular">
+    </form>
+
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+    <script>
+                document.getElementById("calculadora-form").addEventListener("submit", function(event) {
+            event.preventDefault();  // Evitar que el formulario se envíe automáticamente
+
+            // Leer los valores ingresados por el usuario
+            let metrosAluminio75x25 = parseFloat(document.getElementById("metrosAluminio75x25").value);
+            let metrosAluminio50x25 = parseFloat(document.getElementById("metrosAluminio50x25").value);
+            let combosAlmohadones = parseFloat(document.getElementById("combosAlmohadones").value);
+            let metrosWPC = parseFloat(document.getElementById("metrosWPC").value);
+
+            // Realizar los cálculos
+            let aluminioAnodizado_75x25 = 12.36;
+            let aluminioAnodizado_50x25 = 8.66;
+            let almohadon_grandeYchico = 80;
+            let wpc_mt = 20;
+
+            let precio_75x25 = aluminioAnodizado_75x25 * metrosAluminio75x25;
+            let precio_50x25 = aluminioAnodizado_50x25 * metrosAluminio50x25;
+            let precio_almohadones = almohadon_grandeYchico * combosAlmohadones;
+            let precio_wpc = wpc_mt * metrosWPC;
+
+            let precio_total = precio_50x25 + precio_75x25 + precio_almohadones + precio_wpc;
+            let total_dolares = precio_total;
+            let total_pesos = total_dolares * 300;
+
+            let precio_total_dolares = total_dolares.toFixed(2);
+            let precio_total_pesos = total_pesos.toFixed(2);
+            let precio_total_multiplicado = (total_pesos * 2.14 + 5000).toFixed(2);
+
+            // Mostrar el resultado
+            let resultado = `Precio total en pesos = ${precio_total_pesos}<br>Precio final multiplicado por 2.14 + 5000 de extras = ${precio_total_multiplicado}`;
+            document.getElementById("resultado").innerHTML = resultado;
+        });
+    </script>
+    
+</body>
+</html>
