@@ -115,21 +115,19 @@ input[type="submit"] {
     }
 
     .container {
-        flex-direction: column; /* Cambiar a dirección de columna */
-        align-items: center; /* Centrar elementos horizontalmente */
+        flex-direction: column;
+        align-items: center;
     }
 
     .sidebar {
-        margin-right: 0; /* Eliminar margen derecho para alinear en la columna */
+        margin-right: 0; 
     }
 
-    /* Asegurar que los elementos de la columna principal estén centrados */
     .main {
         text-align: center;
     }
 
-    /* Asegurar que los inputs tengan un ancho más pequeño */
     input[type="number"] {
-        width: 100%; /* Ancho completo para dispositivos móviles */
+        width: 100%;
     }
 }
