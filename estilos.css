@@ -28,7 +28,7 @@ body {
 }
 
 .sidebar h2 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -46,7 +46,7 @@ body {
 
 /* Estilos para la calculadora */
 .calculator-title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -112,5 +112,24 @@ input[type="submit"] {
     
     .logo {
         max-width: 20%;
+    }
+
+    .container {
+        flex-direction: column; /* Cambiar a dirección de columna */
+        align-items: center; /* Centrar elementos horizontalmente */
+    }
+
+    .sidebar {
+        margin-right: 0; /* Eliminar margen derecho para alinear en la columna */
+    }
+
+    /* Asegurar que los elementos de la columna principal estén centrados */
+    .main {
+        text-align: center;
+    }
+
+    /* Asegurar que los inputs tengan un ancho más pequeño */
+    input[type="number"] {
+        width: 100%; /* Ancho completo para dispositivos móviles */
     }
 }
