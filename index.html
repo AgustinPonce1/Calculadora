@@ -4,8 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Costos - Leon Livings</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" href="media/logo.jpg" type="image/x-icon">
 </head>
 <body>
+    <div class="logo-container">
+        <img src="media/logo.jpg" alt="Logo de Mi Empresa" class="logo">
+    </div>
     <div class="container">
         <div class="sidebar">
             <h2>Especificaciones</h2>
@@ -14,7 +18,6 @@
             <p><strong>Combo almohadones por sillón de un cuerpo:</strong> Precio Dólar: 80</p>
             <p><strong>Metro de WPC:</strong> Precio Dólar: 20</p>
         </div>
-        
         <div class="main">
             <h1 class="calculator-title">Calculadora de Precios</h1>
             <form id="calculadora-form" method="dialog">
@@ -69,7 +72,7 @@
             let precio_total_multiplicado = (total_pesos * 2.14 + 5000).toFixed(2);
 
             // Mostrar el resultado
-            let resultado = `Precio total en pesos = ${precio_total_pesos}<br>Precio final multiplicado por 2.14 + 5000 de extras = ${precio_total_multiplicado}`;
+            let resultado = `Precio total en pesos = <span style="color: green">${precio_total_pesos}</span><br>Precio final multiplicado por 2.14 + 5000 de extras = <span style="color: green">${precio_total_multiplicado}</span>`;
             document.getElementById("resultado").innerHTML = resultado;
         });
     </script>

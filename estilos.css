@@ -7,12 +7,12 @@
 
 /* Estilos generales de la página */
 body {
-    margin-top: 200px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #f0f0f0;
 }
 
 .container {
+    margin-top: 200px;
     display: flex;
     justify-content: space-between;
     max-width: 1200px;
@@ -22,14 +22,13 @@ body {
 
 .sidebar {
     flex: 1;
-    background-color: #f7f7f7;
     border-radius: 8px;
     padding: 20px;
     text-align: left;
 }
 
 .sidebar h2 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -93,4 +92,25 @@ input[type="submit"] {
     color: red;
     font-size: 16px;
     margin: 0;
+}
+
+.logo-container {
+    text-align: center;
+    margin-right: 200px;
+    margin-top: 20px;
+}
+
+.logo {
+    max-width: 10%;
+    height: auto;
+}
+
+@media (max-width: 960px){
+    .logo-container {
+        margin-right: 0px;
+    }
+    
+    .logo {
+        max-width: 20%;
+    }
 }
