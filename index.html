@@ -81,14 +81,14 @@
 
             let precio_total_dolares = total_dolares.toFixed(2);
             let precio_total_pesos = total_pesos.toFixed(2);
-            let precio_total_multiplicado = (total_pesos * 2.14 + 5000).toFixed(2);
-            let dolar_total_multi = (total_dolares * 2.14 + 5000/dolarOficial).toFixed(2);
+            let precio_total_multiplicado = (total_pesos * 2.14 + 8000).toFixed(2);
+            let dolar_total_multi = (total_dolares * 2.14 + 8000/dolarOficial).toFixed(2);
 
             // Mostrar el resultado
             let resultado = `Precio total en pesos = <span style="color: green">${precio_total_pesos}</span>
             <br>Precio total en dolares = <span style="color: green">${total_dolares}</span>
-            <br>Precio final en <span style="color: black">PESOS</span> multiplicado por 2.14 + 5000 de extras = <span style="color: green">${precio_total_multiplicado}</span>
-            <br>Precio final en <span style="color: black">DOLARES</span> multiplicado por 2.14 + 5000 de extras = <span style="color: green">${dolar_total_multi}</span>`;
+            <br>Precio final en <span style="color: black">PESOS</span> multiplicado por 2.14 + 8000 de extras = <span style="color: green">${precio_total_multiplicado}</span>
+            <br>Precio final en <span style="color: black">DOLARES</span> multiplicado por 2.14 + 8000 de extras = <span style="color: green">${dolar_total_multi}</span>`;
             document.getElementById("resultado").innerHTML = resultado;
     });
     </script>
