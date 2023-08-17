@@ -1,4 +1,4 @@
-dolar_oficial = 300
+dolar_oficial = 370
 
 #Aluminio 75x25 - 1mt vale 12.36 dolar
 aluminioAnodizado_75x25 =  12.36
