@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costos - Leon Livings</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" href="media/logo.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="media/logosinf.png" alt="Logo de Mi Empresa" class="logo">
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <!-- ## ANCHO X LARGO X ALTURA -->
+            <h2>Especificaciones</h2>
+            <p><strong>Metro de Aluminio Anodizado 75x25:</strong> Precio Dólar: 12.36</p>
+            <p><strong>Metro de Aluminio Anodizado 50x25:</strong> Precio Dólar: 8.66</p>
+            <p><strong>Combo almohadones por sillón de un cuerpo:</strong> Precio Dólar: 80</p>
+            <p><strong>Metro de WPC:</strong> Precio Dólar: 20</p>
+            <br>
+            <p><strong>Sillon 1 cuerpo(Opcion 1):</strong> 75x68x67 -- 9.2mt 75x25</p>
+            <p><strong>Sillon 1 cuerpo(Opcion 2):</strong> 135x68x75 -- 9.5mt 75x25 y 65cm 50x25</p>
+            <p><strong>Sillon 2 cuerpos:</strong> 135x68x67 -- 15mt 75x25 y 1.2mt 50x25</p>
+            <p><strong>Sillon 3 cuerpos:</strong> 180x67x67 -- 17.72mt 75x25 y 3.7mt 50x25</p>
+            <p><strong>Barra Aluminio:</strong> 75x170x100 -- $310.000 (850 USD) </p>
+            <p><strong>Barra Deck:</strong> 73x114x100 -- $240.000 (650 USD)</p>
+            <p><strong>Banqueta Aluminio:</strong> 40x50x100 -- $70.000 (190 USD)</p>
+            <p><strong>Banqueta Deck:</strong> 40x37x100 -- 6.5mt 50x25 y 35.5cm 25x25 y 1mt deck</p>
+            <p><strong>Mesa Deck (Opcion 1):</strong> 52x120x40 -- $125.000 (350 USD) </p>
+            <p><strong>Mesa Deck (Opcion 2):</strong> 52x100x40 -- $110.000 (300 USD) </p>
+            <p><strong>Mesa Aluminio(Opcion 1):</strong> 52x120x40 -- 15mt 75x25</p>
+            <p><strong>Mesa Aluminio(Opcion 2):</strong> 52x100x40 -- $134.000 (365 USD)</p>
+
+
+            <h2>PRECIOS FINALES</h2>
+            <p><strong>Sillon un cuerpo:</strong> 75x68x67 -- $164.000 (447 USD) </p>
+            <p><strong>Sillon un cuerpo(Opcion 2):</strong> 75x68x60 -- $154.000 (427 USD) </p>
+            <p><strong>Sillon dos cuerpos:</strong> 135x68x67 -- $288.000 (784 USD) </p>
+            <p><strong>Sillon tres cuerpos:</strong> 180x67x67 -- $400.000 (1085 USD) </p>
+            <p><strong>Mesa ratona aluminio 1:</strong> 52x120x40 -- $154.000 (420 USD) </p>
+            <p><strong>Mesa ratona aluminio 2:</strong> 52x100x40 -- $134.000 (365 USD)</p>
+            <p><strong>Mesa ratona deck 1:</strong> 52x120x40 -- $125.000 (350 USD)</p>
+            <p><strong>Mesa ratona deck 2:</strong> 52x100x40 -- $110.000 (300 USD)</p>
+            <p><strong>Barra aluminio:</strong> 75x170x100 -- $310.000 (850 USD)</p>
+            <p><strong>Barra deck:</strong> 73x114x100 -- $240.000 (650 USD)</p>
+            <p><strong>Banqueta aluminio:</strong> 40x50x100 -- $70.000 (190 USD)</p>
+            <p><strong>Banqueta deck:</strong> 40x37x100 -- $80.000 (220 USD)</p>
+            <p><strong>@LEON.LIVINGS</strong></p>
+        </div>
+        <div class="main">
+            <h1 class="calculator-title">Calculadora de Precios</h1>
+            <form id="calculadora-form">
+                <label for="dolarOficial">Precio del Dólar Oficial:</label>
+                <input type="number" id="dolarOficial" name="dolarOficial" step="0.01" required><br>
+                
+                <label for="metrosAluminio75x25">Metro/s de Aluminio Anodizado 75x25 requeridos:</label>
+                <input type="number" id="metrosAluminio75x25" name="metrosAluminio75x25" step="0.001" required><br>
+        
+                <label for="metrosAluminio50x25">Metro/s de Aluminio Anodizado 50x25 requeridos:</label>
+                <input type="number" id="metrosAluminio50x25" name="metrosAluminio50x25" step="0.001" required><br>
+        
+                <label for="combosAlmohadones">Combo/s de almohadones requeridos:</label>
+                <input type="number" id="combosAlmohadones" name="combosAlmohadones" step="0.001" required><br>
+        
+                <label for="metrosWPC">Metro/s de WPC requeridos:</label>
+                <input type="number" id="metrosWPC" name="metrosWPC" step="0.001" required><br>
+        
+                <input type="submit" value="Calcular">
+            </form>
+            <div class="result-container">
+                <h2 class="result-title">Resultado:</h2>
+                <p class="result-value" id="resultado"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+            document.getElementById("calculadora-form").addEventListener("submit", function(event) {
+            event.preventDefault();  // Evitar que el formulario se envíe automáticamente
+
+            // Leer los valores ingresados por el usuario
+            let metrosAluminio75x25 = parseFloat(document.getElementById("metrosAluminio75x25").value);
+            let metrosAluminio50x25 = parseFloat(document.getElementById("metrosAluminio50x25").value);
+            let combosAlmohadones = parseFloat(document.getElementById("combosAlmohadones").value);
+            let metrosWPC = parseFloat(document.getElementById("metrosWPC").value);
+            let dolarOficial = parseFloat(document.getElementById("dolarOficial").value); // Nuevo input
+
+            // Realizar los cálculos
+            let aluminioAnodizado_75x25 = 12.36;
+            let aluminioAnodizado_50x25 = 8.66;
+            let almohadon_grandeYchico = 80;
+            let wpc_mt = 20;
+
+            let precio_75x25 = aluminioAnodizado_75x25 * metrosAluminio75x25;
+            let precio_50x25 = aluminioAnodizado_50x25 * metrosAluminio50x25;
+            let precio_almohadones = almohadon_grandeYchico * combosAlmohadones;
+            let precio_wpc = wpc_mt * metrosWPC;
+
+            let precio_total = precio_50x25 + precio_75x25 + precio_almohadones + precio_wpc;
+            let total_dolares = precio_total;
+            let total_pesos = total_dolares * dolarOficial;
+
+            let precio_total_dolares = total_dolares.toFixed(2);
+            let precio_total_pesos = total_pesos.toFixed(2);
+            let precio_total_multiplicado = (total_pesos * 2.14 + 8000).toFixed(2);
+            let dolar_total_multi = (total_dolares * 2.14 + 8000/dolarOficial).toFixed(2);
+
+            // Mostrar el resultado
+            let resultado = `Precio total en pesos = <span style="color: green">${precio_total_pesos}</span>
+            <br>Precio total en dolares = <span style="color: green">${total_dolares}</span>
+            <br>Precio final en <span style="color: black">PESOS</span> multiplicado por 2.14 + 8000 de extras = <span style="color: green">${precio_total_multiplicado}</span>
+            <br>Precio final en <span style="color: black">DOLARES</span> multiplicado por 2.14 + 8000 de extras = <span style="color: green">${dolar_total_multi}</span>`;
+            document.getElementById("resultado").innerHTML = resultado;
+    });
+    </script>
+    
+</body>
+</html>
