@@ -80,10 +80,10 @@ button:hover {
     cursor: pointer;
     width: 25px;
     height: 25px;
-    background-image: url('/media/icons8-invisible-50.png'); /* Cambia la ruta a tu imagen del icono de ojo */
+    background-image: url('./media/icons8-invisible-50.png'); /* Cambia la ruta a tu imagen del icono de ojo */
     background-size: cover;
 }
 
 .eye-icon.active {
-    background-image: url('/media/icons8-invisible-50.png'); /* Cambia la ruta a tu imagen del icono de ojo apagado */
+    background-image: url('./media/icons8-invisible-50.png'); /* Cambia la ruta a tu imagen del icono de ojo apagado */
 }
